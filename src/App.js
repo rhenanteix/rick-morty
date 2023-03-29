@@ -6,13 +6,17 @@ import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
 
 function App() {
-  let [pageNumber, setPageNumber] = useState(1)
+  let [pageNumber, setPageNumber] = useState(1);
+  let [fetchData, updateFetchedData] = useState([]);
+  let {info, results} = fetchData
+
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
 
   useEffect(()=>{
     (async function() {
         let data = await fetch(api).then(res=>res.json())
-        console.log(data)
+        updateFetchedData(data);
+        console.log(data.results)
     })()
   }, [api])
   return (
