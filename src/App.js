@@ -30,17 +30,17 @@ function App() {
         <div className="col-3">
           <Filters/>
         </div>
-        <div className="col-8">
-          <div className="row" >
-            <div className="col-4">
-              <Cards/>
-            </div>
+        <div className="col-lg-8 col-12">
+          <div className="row">
+              <Cards className="col-4" results={results}/>
+              <Cards className="col-4" results={results}/>
+              <Cards className="col-4" results={results}/>
           </div>
         </div>
       </div>
     </div>
 
-    </div>
+  </div>
   );
 }
 
