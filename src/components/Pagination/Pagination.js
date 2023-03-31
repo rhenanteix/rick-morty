@@ -5,6 +5,7 @@ const Pagination = ({setPageNumber, pageNumber, info}) => {
     return (
        <ReactPaginate
        className="pagination justify-content-center gap-4 my-4"
+       forcePage={pageNumber=== 1 ? 0 : pageNumber - 1}
        nextLabel="Próximo"
        previousLabel="Voltar"
        nextClassName="btn btn-primary"
