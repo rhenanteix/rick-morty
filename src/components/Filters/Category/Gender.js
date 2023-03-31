@@ -1,6 +1,9 @@
 import React from "react";
+import FilterButton from "../FilterButton";
 
-const Gender = () => {
+const Gender = ({ setGender, setPageNumber }) => {
+  let genders = ["female", "male", "genderless", "unknown"];
+
   return (
     <div className="accordion-item">
       <h2 className="accordion-header">
@@ -20,7 +23,18 @@ const Gender = () => {
         className="accordion-collapse collapse show"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body"></div>
+        <div className="accordion-body d-flex flex-wrap gap-3">
+          {genders.map((items, i) => (
+            <FilterButton
+              setPageNumber={setPageNumber}
+              task={setGender}
+              key={i}
+              name="genders"
+              index={i}
+              items={items}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
