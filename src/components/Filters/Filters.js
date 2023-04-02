@@ -12,7 +12,7 @@ const Filters = ({ setStatus, setPageNumber, setGender, setSpecies }) => {
         window.location.reload(false) 
     }
   return (
-    <div className="col-4">
+    <div className="col-lg-12 col-6 mb-5">
       <div className="text-center fw-bold fs-4 mb-4">Filtros</div>
       <div
         onClick={clear}
